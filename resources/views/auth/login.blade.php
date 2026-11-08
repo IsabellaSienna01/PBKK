@@ -1,21 +1,21 @@
 <x-guest-layout>
     <!-- Header Title -->
     <div class="mb-6 text-center">
-        <h2 class="text-2xl font-bold tracking-tight text-gray-900">
-            Portal Akademik <span class="text-blue-600">Backoffice</span>
+        <h2 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            Portal Akademik <span class="text-blue-600 dark:text-blue-400">Backoffice</span>
         </h2>
-        <p class="mt-1 text-sm text-gray-500">
+        <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">
             Silakan login untuk mengakses panel administrasi dan RBAC.
         </p>
     </div>
 
     <!-- Quick Demo Accounts (Challenge Evaluasi Dosen / Asdos) -->
-    <div class="mb-6 rounded-xl border border-blue-200 bg-blue-50/70 p-4 shadow-sm">
+    <div class="mb-6 rounded-xl border border-blue-200 bg-blue-50/70 p-4 shadow-sm dark:border-blue-900 dark:bg-slate-800/80">
         <div class="flex items-center gap-2 mb-2">
             <span class="inline-flex size-6 items-center justify-center rounded-full bg-blue-600 text-xs font-bold text-white">⚡</span>
-            <h3 class="text-sm font-semibold text-blue-900">Auto-Login Test Accounts (Quick Demo)</h3>
+            <h3 class="text-sm font-semibold text-blue-900 dark:text-blue-200">Auto-Login Test Accounts (Quick Demo)</h3>
         </div>
-        <p class="text-xs text-blue-800/80 mb-3">
+        <p class="text-xs text-blue-800/80 mb-3 dark:text-slate-300">
             Gunakan tombol berikut untuk login instan tanpa mengetik password saat evaluasi demo kelas:
         </p>
 
@@ -47,8 +47,8 @@
             </form>
         </div>
 
-        <div class="mt-2 text-[11px] text-gray-500 text-center">
-            Password semua akun uji coba: <code class="px-1.5 py-0.5 rounded bg-white text-gray-800 border font-mono">password</code>
+        <div class="mt-2 text-[11px] text-gray-500 dark:text-slate-400 text-center">
+            Password semua akun uji coba: <code class="px-1.5 py-0.5 rounded bg-white dark:bg-slate-700 text-gray-800 dark:text-slate-200 border dark:border-slate-600 font-mono">password</code>
         </div>
     </div>
 
@@ -79,11 +79,11 @@
         <!-- Remember Me & Back to Home -->
         <div class="flex items-center justify-between">
             <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
-                <span class="ms-2 text-sm text-gray-600">{{ __('Ingat saya') }}</span>
+                <input id="remember_me" type="checkbox" class="rounded border-gray-300 dark:border-slate-600 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:bg-slate-800" name="remember">
+                <span class="ms-2 text-sm text-gray-600 dark:text-gray-300">{{ __('Ingat saya') }}</span>
             </label>
 
-            <a href="{{ route('home') }}" class="text-xs text-blue-600 hover:text-blue-800 underline">
+            <a href="{{ route('home') }}" class="text-xs text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline">
                 ← Kembali ke Portal
             </a>
         </div>

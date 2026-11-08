@@ -5,7 +5,7 @@
 @section('content_header')
     <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
         <div>
-            <h1 class="m-0 text-dark font-weight-bold">Manajemen Pengguna & Otorisasi RBAC</h1>
+            <h1 class="m-0 font-weight-bold">Manajemen Pengguna & Otorisasi RBAC</h1>
             <p class="text-muted m-0 small">Pengaturan peran dinamis Spatie (Admin & Staf)</p>
         </div>
         <button type="button" class="btn btn-primary shadow-sm" data-bs-toggle="modal" data-bs-target="#addUserModal">
@@ -30,11 +30,11 @@
     @endif
 
     {{-- Callout Penjelasan RBAC --}}
-    <div class="callout callout-warning shadow-sm bg-white mb-4">
+    <div class="callout callout-warning shadow-sm mb-4">
         <h5 class="fw-bold mb-1"><i class="bi bi-shield-lock-fill text-warning"></i> Aturan Hak Akses Berbasis Peran (RBAC)</h5>
         <div class="row mt-2">
             <div class="col-md-6">
-                <div class="p-2 border rounded bg-light">
+                <div class="p-2 border rounded">
                     <span class="badge bg-danger">Role: Admin</span>
                     <p class="small text-muted mb-0 mt-1">
                         Memiliki akses menyeluruh ke seluruh modul, termasuk <strong>Hak Eksklusif Hapus Data</strong> dan pengelolaan pengguna & peran.
@@ -42,7 +42,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="p-2 border rounded bg-light">
+                <div class="p-2 border rounded">
                     <span class="badge bg-info text-white">Role: Staf</span>
                     <p class="small text-muted mb-0 mt-1">
                         Memiliki akses terbatas untuk melihat, menambah, dan mengubah data. <strong>Tidak memiliki izin menghapus data</strong> (tombol hapus dikunci dan controller menolak akses).
@@ -54,7 +54,7 @@
 
     {{-- Tabel Pengguna --}}
     <div class="card card-outline card-primary shadow-sm">
-        <div class="card-header bg-white">
+        <div class="card-header">
             <h3 class="card-title fw-bold mb-0">
                 <i class="bi bi-people-fill me-1"></i> Daftar Akun Pengguna & Peran
             </h3>
@@ -62,7 +62,7 @@
 
         <div class="card-body table-responsive p-0">
             <table class="table table-hover table-striped align-middle mb-0">
-                <thead class="table-light">
+                <thead>
                     <tr>
                         <th style="width: 50px;">#</th>
                         <th>Nama Pengguna</th>
@@ -143,7 +143,7 @@
             </table>
         </div>
 
-        <div class="card-footer bg-white d-flex justify-content-end">
+        <div class="card-footer d-flex justify-content-end">
             {{ $users->links('pagination::bootstrap-5') }}
         </div>
     </div>

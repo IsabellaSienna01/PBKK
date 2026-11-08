@@ -15,7 +15,7 @@
                     <img src="{{ $foto ?? asset('foto.png') }}" alt="Foto Mahasiswa" class="h-full w-full rounded-2xl object-cover">
                 </div>
                 <div>
-                    <h2 class="text-2xl font-semibold tracking-tight">{{ $nama ?? 'Isabella Sienna Sulisthio' }}</h2>
+                    <h2 class="text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">{{ $nama ?? 'Isabella Sienna Sulisthio' }}</h2>
                     <p class="mt-1 text-slate-500 dark:text-slate-400">NRP {{ $nrp ?? '5025XXXXXXXX' }}</p>
                     <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Informatics Engineering · Institut Teknologi Sepuluh Nopember</p>
                 </div>
@@ -29,7 +29,7 @@
                     Quick Profile
                 </p>
 
-                <h2 class="mt-3 text-2xl font-semibold tracking-tight">
+                <h2 class="mt-3 text-2xl font-semibold tracking-tight text-slate-950 dark:text-white">
                     A little more about me.
                 </h2>
 
@@ -62,7 +62,7 @@
 
             <section class="border-l-0 border-slate-200 dark:border-slate-700 lg:border-l lg:pl-14">
                 <p class="text-sm font-semibold uppercase tracking-[0.18em] text-blue-600 dark:text-blue-400">Current Academic Focus</p>
-                <h2 class="mt-3 text-xl font-semibold">Building Better Software Foundations.</h2>
+                <h2 class="mt-3 text-xl font-semibold text-slate-950 dark:text-white">Building Better Software Foundations.</h2>
                 <p class="mt-3 leading-7 text-slate-600 dark:text-slate-300">Current learning priorities include software architecture, web application development, and practical artificial intelligence concepts.</p>
             </section>
         </div>

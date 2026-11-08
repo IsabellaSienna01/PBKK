@@ -76,19 +76,19 @@
             <div class="mt-10 grid border-y border-slate-200 dark:border-slate-700 sm:grid-cols-2 lg:grid-cols-4">
                 <div class="border-b border-slate-200 py-5 dark:border-slate-700 sm:border-r sm:px-5 lg:border-b-0 lg:first:pl-0">
                     <p class="text-sm text-slate-500 dark:text-slate-400">Semester</p>
-                    <p class="mt-1 text-lg font-semibold">5</p>
+                    <p class="mt-1 text-lg font-semibold text-slate-900 dark:text-white">5</p>
                 </div>
                 <div class="border-b border-slate-200 py-5 dark:border-slate-700 sm:px-5 lg:border-b-0 lg:border-r">
                     <p class="text-sm text-slate-500 dark:text-slate-400">Department</p>
-                    <p class="mt-1 text-lg font-semibold">Informatics</p>
+                    <p class="mt-1 text-lg font-semibold text-slate-900 dark:text-white">Informatics</p>
                 </div>
                 <div class="border-b border-slate-200 py-5 dark:border-slate-700 sm:border-r sm:px-5 lg:border-b-0">
                     <p class="text-sm text-slate-500 dark:text-slate-400">University</p>
-                    <p class="mt-1 text-lg font-semibold">ITS</p>
+                    <p class="mt-1 text-lg font-semibold text-slate-900 dark:text-white">ITS</p>
                 </div>
                 <div class="py-5 sm:px-5 lg:pr-0">
                     <p class="text-sm text-slate-500 dark:text-slate-400">Current focus</p>
-                    <p class="mt-1 text-lg font-semibold">Artificial Intelligence</p>
+                    <p class="mt-1 text-lg font-semibold text-slate-900 dark:text-white">Artificial Intelligence</p>
                 </div>
             </div>
         </div>
@@ -102,15 +102,15 @@
             </div>
             <div class="grid gap-5 sm:grid-cols-3">
                 <article class="border-t-2 border-blue-500 pt-4">
-                    <h3 class="font-semibold">Web Development</h3>
+                    <h3 class="font-semibold text-slate-900 dark:text-white">Web Development</h3>
                     <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">Crafting accessible, maintainable web interfaces.</p>
                 </article>
                 <article class="border-t-2 border-blue-500 pt-4">
-                    <h3 class="font-semibold">Software Engineering</h3>
+                    <h3 class="font-semibold text-slate-900 dark:text-white">Software Engineering</h3>
                     <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">Turning requirements into clear, reliable systems.</p>
                 </article>
                 <article class="border-t-2 border-blue-500 pt-4">
-                    <h3 class="font-semibold">Artificial Intelligence</h3>
+                    <h3 class="font-semibold text-slate-900 dark:text-white">Artificial Intelligence</h3>
                     <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">Exploring practical AI for everyday workflows.</p>
                 </article>
             </div>

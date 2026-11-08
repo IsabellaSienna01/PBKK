@@ -5,7 +5,7 @@
 @section('content_header')
     <div class="d-flex justify-content-between align-items-center">
         <div>
-            <h1 class="m-0 text-dark font-weight-bold">Pengaturan Akun & Profil</h1>
+            <h1 class="m-0 font-weight-bold">Pengaturan Akun & Profil</h1>
             <p class="text-muted m-0 small">Kelola informasi kredensial login dan kata sandi akun Anda</p>
         </div>
         <a href="{{ route('dashboard') }}" class="btn btn-secondary">
@@ -52,8 +52,8 @@
         <div class="col-lg-8">
             {{-- Update Profile Info --}}
             <div class="card card-outline card-primary shadow-sm mb-4">
-                <div class="card-header bg-white">
-                    <h5 class="card-title fw-bold text-dark mb-0">Informasi Pribadi</h5>
+                <div class="card-header">
+                    <h5 class="card-title fw-bold mb-0">Informasi Pribadi</h5>
                 </div>
                 <form method="POST" action="{{ route('profile.update') }}">
                     @csrf
@@ -77,7 +77,7 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="card-footer bg-light d-flex justify-content-end">
+                    <div class="card-footer d-flex justify-content-end">
                         <button type="submit" class="btn btn-primary">
                             <i class="bi bi-save me-1"></i> Simpan Profil
                         </button>
@@ -87,8 +87,8 @@
 
             {{-- Update Password --}}
             <div class="card card-outline card-warning shadow-sm mb-4">
-                <div class="card-header bg-white">
-                    <h5 class="card-title fw-bold text-dark mb-0">Perbarui Kata Sandi</h5>
+                <div class="card-header">
+                    <h5 class="card-title fw-bold mb-0">Perbarui Kata Sandi</h5>
                 </div>
                 <form method="POST" action="{{ route('password.update') }}">
                     @csrf
@@ -121,8 +121,8 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="card-footer bg-light d-flex justify-content-end">
-                        <button type="submit" class="btn btn-warning text-dark fw-bold">
+                    <div class="card-footer d-flex justify-content-end">
+                        <button type="submit" class="btn btn-warning fw-bold">
                             <i class="bi bi-key-fill me-1"></i> Perbarui Kata Sandi
                         </button>
                     </div>

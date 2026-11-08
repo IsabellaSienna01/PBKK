@@ -5,7 +5,7 @@
 @section('content_header')
     <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
         <div>
-            <h1 class="m-0 text-dark font-weight-bold">Manajemen Data Mahasiswa</h1>
+            <h1 class="m-0 font-weight-bold">Manajemen Data Mahasiswa</h1>
             <p class="text-muted m-0 small">Daftar mahasiswa terdaftar di portal akademik</p>
         </div>
         <div>
@@ -36,8 +36,8 @@
 
     {{-- Filter Pencarian & Kueri when() (Tantangan / Challenge Nilai Plus A+) --}}
     <div class="card card-outline card-primary shadow-sm mb-4">
-        <div class="card-header bg-light">
-            <h3 class="card-title fw-bold text-dark mb-0">
+        <div class="card-header">
+            <h3 class="card-title fw-bold mb-0">
                 <i class="bi bi-search me-1"></i> Filter & Pencarian Data (Kueri <code>when()</code>)
             </h3>
         </div>
@@ -47,7 +47,7 @@
                 <div class="col-md-5">
                     <label for="search" class="form-label small fw-semibold text-secondary">Cari (Nama, NRP, atau Email)</label>
                     <div class="input-group">
-                        <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
+                        <span class="input-group-text"><i class="bi bi-search"></i></span>
                         <input type="text" class="form-control" id="search" name="search"
                             value="{{ request('search') }}" placeholder="Ketik kata kunci...">
                     </div>
@@ -94,7 +94,7 @@
 
     {{-- Tabel Data Mahasiswa --}}
     <div class="card card-outline card-secondary shadow-sm">
-        <div class="card-header bg-white d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <div class="card-header d-flex justify-content-between align-items-center flex-wrap gap-2">
             <div>
                 <h3 class="card-title fw-bold mb-0">
                     <i class="bi bi-table me-1"></i> Data Mahasiswa
@@ -108,7 +108,7 @@
 
         <div class="card-body table-responsive p-0">
             <table class="table table-hover table-striped align-middle mb-0">
-                <thead class="table-light">
+                <thead>
                     <tr>
                         <th style="width: 50px;">#</th>
                         <th>NRP</th>
@@ -135,7 +135,7 @@
                                 <span class="small text-muted">{{ $mhs->email }}</span>
                             </td>
                             <td>
-                                <span class="badge bg-light text-dark border">{{ $mhs->jurusan }}</span>
+                                <span class="badge bg-secondary">{{ $mhs->jurusan }}</span>
                             </td>
                             <td>{{ $mhs->angkatan }}</td>
                             <td>
@@ -192,7 +192,7 @@
                                                 </div>
                                                 <div class="modal-body text-start">
                                                     <p>Apakah Anda yakin ingin menghapus data mahasiswa berikut secara permanen?</p>
-                                                    <ul class="list-unstyled bg-light p-3 rounded border">
+                                                    <ul class="list-unstyled p-3 rounded border">
                                                         <li><strong>NRP:</strong> {{ $mhs->nrp }}</li>
                                                         <li><strong>Nama:</strong> {{ $mhs->nama }}</li>
                                                         <li><strong>Jurusan:</strong> {{ $mhs->jurusan }}</li>
@@ -228,7 +228,7 @@
         </div>
 
         {{-- Pengunci Link Pagination (withQueryString()) --}}
-        <div class="card-footer bg-white d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <div class="card-footer d-flex justify-content-between align-items-center flex-wrap gap-2">
             <div class="small text-muted">
                 Menampilkan {{ $mahasiswas->firstItem() ?? 0 }} - {{ $mahasiswas->lastItem() ?? 0 }} dari {{ $mahasiswas->total() }} total mahasiswa
             </div>

@@ -5,7 +5,7 @@
 @section('content_header')
     <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
         <div>
-            <h1 class="m-0 text-dark font-weight-bold">Proposal Ide Agentic AI</h1>
+            <h1 class="m-0 font-weight-bold">Proposal Ide Agentic AI</h1>
             <p class="text-muted m-0 small">Daftar ide dan aspirasi pengembangan kecerdasan buatan dari mahasiswa</p>
         </div>
         <a href="{{ route('agent.idea') }}" target="_blank" class="btn btn-outline-primary shadow-sm">
@@ -24,8 +24,8 @@
 
     {{-- Filter Pencarian when() --}}
     <div class="card card-outline card-info shadow-sm mb-4">
-        <div class="card-header bg-light">
-            <h3 class="card-title fw-bold text-dark mb-0">
+        <div class="card-header">
+            <h3 class="card-title fw-bold mb-0">
                 <i class="bi bi-search me-1"></i> Filter Ide Agentic AI (Kueri <code>when()</code>)
             </h3>
         </div>
@@ -34,7 +34,7 @@
                 <div class="col-md-7">
                     <label for="search" class="form-label small fw-semibold text-secondary">Cari Judul, Nama Pengusul, atau Deskripsi</label>
                     <div class="input-group">
-                        <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
+                        <span class="input-group-text"><i class="bi bi-search"></i></span>
                         <input type="text" class="form-control" id="search" name="search"
                             value="{{ request('search') }}" placeholder="Ketik kata kunci ide...">
                     </div>
@@ -66,7 +66,7 @@
 
     {{-- Tabel Ide Agent --}}
     <div class="card card-outline card-secondary shadow-sm">
-        <div class="card-header bg-white d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <div class="card-header d-flex justify-content-between align-items-center flex-wrap gap-2">
             <div>
                 <h3 class="card-title fw-bold mb-0">
                     <i class="bi bi-cpu-fill me-1"></i> Usulan Inovasi Agentic AI
@@ -77,7 +77,7 @@
 
         <div class="card-body table-responsive p-0">
             <table class="table table-hover table-striped align-middle mb-0">
-                <thead class="table-light">
+                <thead>
                     <tr>
                         <th style="width: 50px;">#</th>
                         <th>Judul Usulan Ide</th>
@@ -92,10 +92,10 @@
                         <tr>
                             <td>{{ $ideas->firstItem() + $index }}</td>
                             <td>
-                                <div class="fw-bold text-dark">{{ $ide->judul_ide }}</div>
+                                <div class="fw-bold">{{ $ide->judul_ide }}</div>
                                 <div class="text-muted small"><i class="bi bi-clock"></i> {{ $ide->created_at?->diffForHumans() }}</div>
                             </td>
-                            <td><span class="badge bg-light text-dark border">{{ $ide->nama }}</span></td>
+                            <td><span class="badge bg-secondary">{{ $ide->nama }}</span></td>
                             <td><p class="small text-secondary mb-0">{{ Str::limit($ide->deskripsi, 140) }}</p></td>
                             <td>
                                 <span class="badge {{ $ide->status === 'Disetujui' ? 'bg-success' : ($ide->status === 'Ditolak' ? 'bg-danger' : 'bg-warning text-dark') }}">
@@ -163,7 +163,7 @@
             </table>
         </div>
 
-        <div class="card-footer bg-white d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <div class="card-footer d-flex justify-content-between align-items-center flex-wrap gap-2">
             <div class="small text-muted">
                 Menampilkan {{ $ideas->firstItem() ?? 0 }} - {{ $ideas->lastItem() ?? 0 }} dari {{ $ideas->total() }} ide
             </div>

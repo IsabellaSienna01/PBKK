@@ -5,7 +5,7 @@
 @section('content_header')
     <div class="d-flex justify-content-between align-items-center">
         <div>
-            <h1 class="m-0 text-dark font-weight-bold">Edit Data Mahasiswa</h1>
+            <h1 class="m-0 font-weight-bold">Edit Data Mahasiswa</h1>
             <p class="text-muted m-0 small">Perbarui rincian informasi akademik mahasiswa</p>
         </div>
         <a href="{{ route('dashboard.mahasiswa.index') }}" class="btn btn-secondary">
@@ -18,8 +18,8 @@
     <div class="row">
         <div class="col-lg-8">
             <div class="card card-outline card-warning shadow-sm">
-                <div class="card-header bg-white">
-                    <h3 class="card-title fw-bold text-dark mb-0">Formulir Pembaruan Data</h3>
+                <div class="card-header">
+                    <h3 class="card-title fw-bold mb-0">Formulir Pembaruan Data</h3>
                 </div>
                 <form method="POST" action="{{ route('dashboard.mahasiswa.update', $mahasiswa) }}">
                     @csrf
@@ -105,9 +105,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card-footer bg-light d-flex justify-content-end gap-2">
+                    <div class="card-footer d-flex justify-content-end gap-2">
                         <a href="{{ route('dashboard.mahasiswa.index') }}" class="btn btn-secondary">Batal</a>
-                        <button type="submit" class="btn btn-warning text-dark fw-bold">
+                        <button type="submit" class="btn btn-warning fw-bold">
                             <i class="bi bi-check2-circle me-1"></i> Perbarui Perubahan
                         </button>
                     </div>
@@ -117,8 +117,8 @@
 
         <div class="col-lg-4">
             <div class="card card-outline card-info shadow-sm">
-                <div class="card-header bg-white">
-                    <h3 class="card-title fw-bold text-dark mb-0">Informasi Otorisasi</h3>
+                <div class="card-header">
+                    <h3 class="card-title fw-bold mb-0">Informasi Otorisasi</h3>
                 </div>
                 <div class="card-body">
                     <p class="small text-muted mb-2">

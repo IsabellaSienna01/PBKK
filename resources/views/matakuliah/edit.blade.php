@@ -5,7 +5,7 @@
 @section('content_header')
     <div class="d-flex justify-content-between align-items-center">
         <div>
-            <h1 class="m-0 text-dark font-weight-bold">Edit Mata Kuliah</h1>
+            <h1 class="m-0 font-weight-bold">Edit Mata Kuliah</h1>
             <p class="text-muted m-0 small">Perbarui data kurikulum mata kuliah</p>
         </div>
         <a href="{{ route('dashboard.matakuliah.index') }}" class="btn btn-secondary">
@@ -18,8 +18,8 @@
     <div class="row">
         <div class="col-lg-8">
             <div class="card card-outline card-warning shadow-sm">
-                <div class="card-header bg-white">
-                    <h3 class="card-title fw-bold text-dark mb-0">Perbarui Rincian Mata Kuliah</h3>
+                <div class="card-header">
+                    <h3 class="card-title fw-bold mb-0">Perbarui Rincian Mata Kuliah</h3>
                 </div>
                 <form method="POST" action="{{ route('dashboard.matakuliah.update', $matakuliah) }}">
                     @csrf
@@ -77,9 +77,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card-footer bg-light d-flex justify-content-end gap-2">
+                    <div class="card-footer d-flex justify-content-end gap-2">
                         <a href="{{ route('dashboard.matakuliah.index') }}" class="btn btn-secondary">Batal</a>
-                        <button type="submit" class="btn btn-warning text-dark fw-bold">
+                        <button type="submit" class="btn btn-warning fw-bold">
                             <i class="bi bi-check2-circle me-1"></i> Perbarui Mata Kuliah
                         </button>
                     </div>

@@ -5,7 +5,7 @@
 @section('content_header')
     <div class="d-flex justify-content-between align-items-center">
         <div>
-            <h1 class="m-0 text-dark font-weight-bold">Profil Lengkap Mahasiswa</h1>
+            <h1 class="m-0 font-weight-bold">Profil Lengkap Mahasiswa</h1>
             <p class="text-muted m-0 small">Detail data akademik mahasiswa terdaftar</p>
         </div>
         <div class="d-flex gap-2">
@@ -51,34 +51,34 @@
 
         <div class="col-lg-8">
             <div class="card card-outline card-secondary shadow-sm">
-                <div class="card-header bg-white">
-                    <h3 class="card-title fw-bold text-dark mb-0">Rincian Akademik</h3>
+                <div class="card-header">
+                    <h3 class="card-title fw-bold mb-0">Rincian Akademik</h3>
                 </div>
                 <div class="card-body p-0">
                     <table class="table table-bordered mb-0">
                         <tbody>
                             <tr>
-                                <th class="table-light w-25">Nomor Registrasi Pokok</th>
+                                <th class="w-25">Nomor Registrasi Pokok</th>
                                 <td class="font-monospace fw-bold text-primary">{{ $mahasiswa->nrp }}</td>
                             </tr>
                             <tr>
-                                <th class="table-light">Nama Mahasiswa</th>
+                                <th>Nama Mahasiswa</th>
                                 <td class="fw-semibold">{{ $mahasiswa->nama }}</td>
                             </tr>
                             <tr>
-                                <th class="table-light">Email Institusi</th>
+                                <th>Email Institusi</th>
                                 <td>{{ $mahasiswa->email }}</td>
                             </tr>
                             <tr>
-                                <th class="table-light">Program Studi</th>
+                                <th>Program Studi</th>
                                 <td>{{ $mahasiswa->jurusan }}</td>
                             </tr>
                             <tr>
-                                <th class="table-light">Tahun Masuk / Angkatan</th>
+                                <th>Tahun Masuk / Angkatan</th>
                                 <td>{{ $mahasiswa->angkatan }}</td>
                             </tr>
                             <tr>
-                                <th class="table-light">Indeks Prestasi Kumulatif</th>
+                                <th>Indeks Prestasi Kumulatif</th>
                                 <td>
                                     <span class="badge {{ $mahasiswa->ipk >= 3.5 ? 'bg-success' : 'bg-primary' }} fs-6">
                                         {{ number_format($mahasiswa->ipk, 2) }} / 4.00
@@ -86,7 +86,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th class="table-light">Status Akademik</th>
+                                <th>Status Akademik</th>
                                 <td>
                                     <span class="badge {{ $mahasiswa->status === 'Aktif' ? 'bg-success' : 'bg-secondary' }}">
                                         {{ $mahasiswa->status }}
@@ -94,13 +94,13 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th class="table-light">Terdaftar Pada</th>
+                                <th>Terdaftar Pada</th>
                                 <td class="text-muted small">{{ $mahasiswa->created_at?->format('d F Y, H:i') ?? '-' }}</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                <div class="card-footer bg-light d-flex justify-content-between align-items-center">
+                <div class="card-footer d-flex justify-content-between align-items-center">
                     <a href="{{ route('mahasiswa.show', $mahasiswa->nrp) }}" target="_blank" class="btn btn-sm btn-outline-primary">
                         <i class="bi bi-box-arrow-up-right me-1"></i> Buka Halaman Profil Publik
                     </a>

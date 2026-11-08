@@ -5,7 +5,7 @@
 @section('content_header')
     <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
         <div>
-            <h1 class="m-0 text-dark font-weight-bold">Kurikulum Mata Kuliah</h1>
+            <h1 class="m-0 font-weight-bold">Kurikulum Mata Kuliah</h1>
             <p class="text-muted m-0 small">Daftar mata kuliah aktif pada program studi</p>
         </div>
         <div>
@@ -28,8 +28,8 @@
 
     {{-- Filter Pencarian when() --}}
     <div class="card card-outline card-success shadow-sm mb-4">
-        <div class="card-header bg-light">
-            <h3 class="card-title fw-bold text-dark mb-0">
+        <div class="card-header">
+            <h3 class="card-title fw-bold mb-0">
                 <i class="bi bi-search me-1"></i> Filter Mata Kuliah (Kueri <code>when()</code>)
             </h3>
         </div>
@@ -38,7 +38,7 @@
                 <div class="col-md-7">
                     <label for="search" class="form-label small fw-semibold text-secondary">Cari (Nama MK, Kode, atau Dosen Pengampu)</label>
                     <div class="input-group">
-                        <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
+                        <span class="input-group-text"><i class="bi bi-search"></i></span>
                         <input type="text" class="form-control" id="search" name="search"
                             value="{{ request('search') }}" placeholder="Ketik kata kunci pencarian...">
                     </div>
@@ -72,7 +72,7 @@
 
     {{-- Tabel Mata Kuliah --}}
     <div class="card card-outline card-secondary shadow-sm">
-        <div class="card-header bg-white d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <div class="card-header d-flex justify-content-between align-items-center flex-wrap gap-2">
             <div>
                 <h3 class="card-title fw-bold mb-0">
                     <i class="bi bi-journal-bookmark-fill me-1"></i> Daftar Mata Kuliah
@@ -83,7 +83,7 @@
 
         <div class="card-body table-responsive p-0">
             <table class="table table-hover table-striped align-middle mb-0">
-                <thead class="table-light">
+                <thead>
                     <tr>
                         <th style="width: 50px;">#</th>
                         <th>Kode MK</th>
@@ -141,7 +141,7 @@
             </table>
         </div>
 
-        <div class="card-footer bg-white d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <div class="card-footer d-flex justify-content-between align-items-center flex-wrap gap-2">
             <div class="small text-muted">
                 Menampilkan {{ $mataKuliahs->firstItem() ?? 0 }} - {{ $mataKuliahs->lastItem() ?? 0 }} dari {{ $mataKuliahs->total() }} mata kuliah
             </div>

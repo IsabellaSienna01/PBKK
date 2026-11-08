@@ -5,7 +5,7 @@
 @section('content_header')
     <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
         <div>
-            <h1 class="m-0 text-dark font-weight-bold">Dashboard Backoffice</h1>
+            <h1 class="m-0 font-weight-bold">Dashboard Backoffice</h1>
             <p class="text-muted m-0 small">Sistem Informasi Akademik & Portal RBAC - Institut Teknologi Sepuluh Nopember</p>
         </div>
         <div class="d-flex align-items-center gap-2">
@@ -32,14 +32,14 @@
     @endif
 
     {{-- RBAC Status Overview Callout --}}
-    <div class="callout callout-info shadow-sm bg-white mb-4">
+    <div class="callout callout-info shadow-sm mb-4">
         <div class="d-flex align-items-start gap-3">
             <div class="fs-1 text-primary">
                 <i class="bi bi-info-circle-fill"></i>
             </div>
             <div>
                 <h5 class="fw-bold mb-1">Status Otorisasi Pengguna (Spatie RBAC)</h5>
-                <p class="mb-1 text-secondary">
+                <p class="mb-1">
                     Selamat datang, <strong>{{ auth()->user()->name }}</strong> (<code>{{ auth()->user()->email }}</code>).
                     Saat ini Anda login dengan hak akses:
                     @foreach(auth()->user()->roles as $role)
@@ -172,7 +172,7 @@
                 </div>
                 <div class="card-body table-responsive p-0">
                     <table class="table table-hover table-striped align-middle mb-0">
-                        <thead class="table-light">
+                        <thead>
                             <tr>
                                 <th>NRP</th>
                                 <th>Nama Mahasiswa</th>
@@ -220,7 +220,7 @@
                 </div>
                 <div class="card-body table-responsive p-0">
                     <table class="table table-hover align-middle mb-0">
-                        <thead class="table-light">
+                        <thead>
                             <tr>
                                 <th>Judul Ide</th>
                                 <th>Pengusul</th>
