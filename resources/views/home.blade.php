@@ -21,12 +21,16 @@
             </div>
 
             
-            <div class="flex flex-wrap gap-3">
+            <div class="flex flex-wrap items-center gap-3">
                 <a href="{{ route('profile') }}" class="rounded-lg bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700">
                     View Profile
                 </a>
                 <a href="{{ route('agent.idea') }}" class="rounded-lg border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-blue-300 hover:text-blue-700 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 dark:hover:text-blue-300">
                     Explore Agentic AI
+                </a>
+                <a href="{{ route('dashboard') }}" class="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                    <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    <span>Tugas Mandiri (Dashboard &amp; RBAC)</span>
                 </a>
             </div>
         </div>
@@ -116,7 +120,21 @@
             </div>
         </div>
 
-        <article class="mt-16 flex flex-col gap-6 rounded-2xl border border-blue-100 bg-blue-50 p-7 dark:border-blue-900 dark:bg-blue-950 sm:p-9 lg:flex-row lg:items-end lg:justify-between">
+        <article class="mt-8 flex flex-col gap-6 rounded-2xl border border-indigo-200 bg-gradient-to-br from-indigo-50/70 to-blue-50/40 p-7 dark:border-indigo-900/60 dark:from-slate-900 dark:to-indigo-950/30 sm:p-9 lg:flex-row lg:items-end lg:justify-between shadow-sm">
+            <div class="max-w-4xl space-y-3">
+                <div class="inline-flex items-center gap-2 rounded-full bg-indigo-100 px-3 py-1 text-xs font-semibold text-indigo-800 dark:bg-indigo-950 dark:text-indigo-300">
+                    <span>🛡️</span> Tugas Mandiri: Dashboard &amp; RBAC Implementation
+                </div>
+                <h2 class="text-2xl font-semibold tracking-tight text-slate-950 dark:text-white">AdminLTE Backoffice &amp; Dynamic Spatie RBAC</h2>
+                <p class="leading-7 text-slate-600 dark:text-slate-300">Integrasi master layout AdminLTE, pengamanan otentikasi login Breeze, otorisasi peran dinamis (Admin &amp; Staf), widget box statistik agregat, filter pencarian kueri <code class="rounded bg-indigo-100 px-1 py-0.5 text-xs font-mono text-indigo-900 dark:bg-slate-800 dark:text-indigo-200">when()</code>, dan pengunci tautan pagination.</p>
+            </div>
+            <a href="{{ route('dashboard') }}" class="inline-flex shrink-0 items-center gap-2 rounded-lg bg-indigo-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-700">
+                <span>Buka Dashboard RBAC</span>
+                <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+        </article>
+
+        <article class="mt-8 flex flex-col gap-6 rounded-2xl border border-blue-100 bg-blue-50 p-7 dark:border-blue-900 dark:bg-blue-950 sm:p-9 lg:flex-row lg:items-end lg:justify-between">
             <div class="max-w-4xl space-y-3">
                 <p class="text-sm font-semibold text-blue-700 dark:text-blue-300">Semester Project</p>
                 <h2 class="text-2xl font-semibold tracking-tight text-slate-950 dark:text-white">Exploring Our Agentic AI Idea.</h2>

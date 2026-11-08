@@ -35,15 +35,14 @@
                     <span class="block text-xs text-slate-500 dark:text-slate-400">Isabella Sienna Sulisthio</span>
                 </a>
 
-                <div class="hidden items-center gap-1 text-sm font-medium text-slate-600 dark:text-slate-200 md:flex md:gap-5">
+                <div class="hidden items-center gap-1 text-sm font-medium text-slate-600 dark:text-slate-200 md:flex md:gap-4">
                     <a href="{{ route('home') }}" class="whitespace-nowrap rounded-md px-2 py-1.5 transition hover:bg-slate-100 hover:text-blue-700 dark:hover:bg-slate-800 dark:hover:text-blue-300">Home</a>
                     <a href="{{ route('profile') }}" class="whitespace-nowrap rounded-md px-2 py-1.5 transition hover:bg-slate-100 hover:text-blue-700 dark:hover:bg-slate-800 dark:hover:text-blue-300">Profile</a>
                     <a href="{{ route('agent.idea') }}" class="whitespace-nowrap rounded-md px-2 py-1.5 transition hover:bg-slate-100 hover:text-blue-700 dark:hover:bg-slate-800 dark:hover:text-blue-300">Agentic AI</a>
-                    @auth
-                        <a href="{{ route('dashboard') }}" class="whitespace-nowrap rounded-md bg-blue-600 px-3 py-1.5 text-white transition hover:bg-blue-700">Admin Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" class="whitespace-nowrap rounded-md px-2 py-1.5 transition hover:bg-slate-100 hover:text-blue-700 dark:hover:bg-slate-800 dark:hover:text-blue-300">Login Admin</a>
-                    @endauth
+                    <a href="{{ route('dashboard') }}" class="inline-flex items-center gap-1.5 whitespace-nowrap rounded-lg bg-indigo-600 px-3.5 py-1.5 text-xs font-semibold text-white shadow-sm transition hover:bg-indigo-700">
+                        <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        Tugas Mandiri (RBAC)
+                    </a>
                 </div>
 
                 <div class="flex items-center gap-2">
@@ -83,6 +82,10 @@
                         <a href="{{ route('home') }}" class="rounded-md px-3 py-2.5 transition hover:bg-slate-100 hover:text-blue-700 dark:hover:bg-slate-800 dark:hover:text-blue-300">Home</a>
                         <a href="{{ route('profile') }}" class="rounded-md px-3 py-2.5 transition hover:bg-slate-100 hover:text-blue-700 dark:hover:bg-slate-800 dark:hover:text-blue-300">Profile</a>
                         <a href="{{ route('agent.idea') }}" class="rounded-md px-3 py-2.5 transition hover:bg-slate-100 hover:text-blue-700 dark:hover:bg-slate-800 dark:hover:text-blue-300">Agentic AI</a>
+                        <a href="{{ route('dashboard') }}" class="flex items-center gap-2 rounded-md bg-indigo-600 px-3 py-2.5 text-white transition hover:bg-indigo-700 font-semibold mt-1">
+                            <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            Tugas Mandiri (Dashboard RBAC)
+                        </a>
                     </div>
                 </div>
             </nav>
