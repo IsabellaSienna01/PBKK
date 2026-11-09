@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Mahasiswa;
+use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
 class MahasiswaController extends Controller
@@ -123,8 +125,11 @@ class MahasiswaController extends Controller
     public function destroy(Mahasiswa $mahasiswa): RedirectResponse
     {
         // Hak Eksklusif Admin - Server-side authorization check
+        /** @var User|null $user */
+        $user = Auth::user();
+
         abort_if(
-            ! auth()->user()->can('delete-mahasiswa'),
+            ! $user || ! $user->can('delete-mahasiswa'),
             403,
             'Access Denied: Only Admin with exclusive permissions can delete student records.'
         );

@@ -1,4 +1,4 @@
-# Tugas Mandiri: Dashboard & RBAC Implementation (Branch `w10`)
+# Tugas Mandiri: Dashboard & RBAC Implementation
 
 Proyek ini merupakan kelanjutan dari portal akademik mandiri berbasis **Laravel** dengan mengintegrasikan panel visual admin profesional (**AdminLTE**), sistem autentikasi (**Laravel Breeze**), otorisasi berbasis peran (**Spatie Laravel Permission**), form pencarian dinamis, pagination persisten, serta database dummy generator menggunakan **Faker**.
 
@@ -63,36 +63,31 @@ Ditambah metrik distribusi mahasiswa (Aktif, Cuti, Lulus) dan rata-rata IPK: `Ma
 
 ### Langkah Instalasi
 
-1. **Pastikan berada di branch `w10`**:
-   ```bash
-   git checkout w10
-   ```
-
-2. **Salin konfigurasi environment & buat file database SQLite**:
+1. **Salin konfigurasi environment & buat file database SQLite**:
    ```bash
    cp .env.example .env
    php artisan key:generate
    touch database/database.sqlite
    ```
 
-3. **Install dependensi PHP & Node.js**:
+2. **Install dependensi PHP & Node.js**:
    ```bash
    composer install
    npm install
    ```
 
-4. **Jalankan migrasi database dan penyiraman data dummy (Seeding)**:
+3. **Jalankan migrasi database dan penyiraman data dummy (Seeding)**:
    ```bash
    php artisan migrate:fresh --seed
    ```
    *Perintah ini otomatis menginisialisasi tabel roles, permissions, membuat akun uji coba, serta menyiram 40+ data dummy mahasiswa & mata kuliah.*
 
-5. **Build asset visual (Tailwind & CSS)**:
+4. **Build asset visual (Tailwind & CSS)**:
    ```bash
    npm run build
    ```
 
-6. **Jalankan server aplikasi**:
+5. **Jalankan server aplikasi**:
    ```bash
    php artisan serve
    ```
@@ -188,4 +183,3 @@ GET|HEAD   /dashboard/users ............................. dashboard.users.index 
 ```
 
 ---
-*Pengembangan Tugas Mandiri Pemrograman Berbasis Kerangka Kerja (PBKK) — Semester Genap 2026.*

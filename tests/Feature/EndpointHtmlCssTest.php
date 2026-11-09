@@ -9,6 +9,7 @@ use App\Models\User;
 use Database\Seeders\AcademicSeeder;
 use Database\Seeders\RolePermissionSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Testing\TestResponse;
 use Tests\TestCase;
 
 class EndpointHtmlCssTest extends TestCase
@@ -43,7 +44,7 @@ class EndpointHtmlCssTest extends TestCase
     /**
      * Helper assertion for verifying AdminLTE HTML & CSS structure
      */
-    protected function assertValidAdminLteHtmlCss($response, string $expectedTitleKeyword): void
+    protected function assertValidAdminLteHtmlCss(TestResponse $response, string $expectedTitleKeyword): void
     {
         $response->assertOk();
         $content = $response->getContent();

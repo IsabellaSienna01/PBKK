@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
@@ -55,7 +56,7 @@ class UserManagementController extends Controller
         ]);
 
         // Prevent admin from removing their own admin role
-        if ($user->id === auth()->id() && $request->role !== 'Admin') {
+        if ($user->id === Auth::id() && $request->role !== 'Admin') {
             return redirect()->route('dashboard.users.index')
                 ->with('error', 'You cannot demote your own account role.');
         }
@@ -68,7 +69,7 @@ class UserManagementController extends Controller
 
     public function destroy(User $user): RedirectResponse
     {
-        if ($user->id === auth()->id()) {
+        if ($user->id === Auth::id()) {
             return redirect()->route('dashboard.users.index')
                 ->with('error', 'You cannot delete your own account.');
         }

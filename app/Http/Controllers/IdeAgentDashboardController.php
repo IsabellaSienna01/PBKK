@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\IdeAgent;
+use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
 class IdeAgentDashboardController extends Controller
@@ -54,8 +56,11 @@ class IdeAgentDashboardController extends Controller
     public function destroy(IdeAgent $ide): RedirectResponse
     {
         // Hak Eksklusif Admin - Server-side check
+        /** @var User|null $user */
+        $user = Auth::user();
+
         abort_if(
-            ! auth()->user()->can('delete-ide-agent'),
+            ! $user || ! $user->can('delete-ide-agent'),
             403,
             'Access Denied: Only Admin can delete idea proposals.'
         );

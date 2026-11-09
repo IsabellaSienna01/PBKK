@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\MataKuliah;
+use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
 class MataKuliahController extends Controller
@@ -87,8 +89,11 @@ class MataKuliahController extends Controller
     public function destroy(MataKuliah $matakuliah): RedirectResponse
     {
         // Hak Eksklusif Admin - Server-side authorization check
+        /** @var User|null $user */
+        $user = Auth::user();
+
         abort_if(
-            ! auth()->user()->can('delete-matakuliah'),
+            ! $user || ! $user->can('delete-matakuliah'),
             403,
             'Access Denied: Only Admin can delete course curriculum.'
         );
