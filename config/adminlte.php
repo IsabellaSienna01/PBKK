@@ -141,7 +141,7 @@ return [
     */
 
     'preloader' => [
-        'enabled' => true,
+        'enabled' => false,
         'mode' => 'fullscreen',
         'img' => [
             'path' => 'vendor/adminlte/dist/assets/img/AdminLTELogo.png',
@@ -240,14 +240,14 @@ return [
 
     'assets' => [
 
-        'mode' => 'cdn',
+        'mode' => 'local',
         'cdn_fallback' => true,
 
         // The AdminLTE version used on the CDN locations below. When left as
         // null, the version installed by composer is detected and used, so
         // the assets served from the CDN always match the local ones.
 
-        'adminlte_version' => null,
+        'adminlte_version' => '4.0.0-beta3',
 
         // Load the optional extended color palette (adminlte-colors.css). It
         // provides the .bg-*, .text-bg-*, .card-* and .callout-* classes for
