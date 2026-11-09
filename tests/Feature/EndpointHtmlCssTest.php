@@ -92,10 +92,10 @@ class EndpointHtmlCssTest extends TestCase
     {
         $response = $this->actingAs($this->admin)->get('/dashboard');
 
-        $this->assertValidAdminLteHtmlCss($response, 'Dashboard Backoffice');
-        $response->assertSee('Total Mahasiswa');
-        $response->assertSee('Mata Kuliah Kurikulum');
-        $response->assertSee('Proposal Ide Agentic');
+        $this->assertValidAdminLteHtmlCss($response, 'Backoffice Dashboard');
+        $response->assertSee('Total Students');
+        $response->assertSee('Curriculum Courses');
+        $response->assertSee('Agentic AI Proposals');
         $response->assertSee('small-box');
     }
 
@@ -106,9 +106,9 @@ class EndpointHtmlCssTest extends TestCase
     {
         $response = $this->actingAs($this->admin)->get('/dashboard/mahasiswa');
 
-        $this->assertValidAdminLteHtmlCss($response, 'Data Mahasiswa');
+        $this->assertValidAdminLteHtmlCss($response, 'Student Records');
         $response->assertSee('Filter');
-        $response->assertSee('Pencarian Data');
+        $response->assertSee('Search Data');
         $response->assertSee('when()');
         $response->assertSee('table-responsive');
         $response->assertSee('pagination');
@@ -144,10 +144,10 @@ class EndpointHtmlCssTest extends TestCase
     {
         $response = $this->actingAs($this->admin)->get("/dashboard/mahasiswa/{$this->mahasiswa->id}");
 
-        $this->assertValidAdminLteHtmlCss($response, 'Profil Lengkap Mahasiswa');
+        $this->assertValidAdminLteHtmlCss($response, 'Student Profile Details');
         $response->assertSee($this->mahasiswa->nama);
         $response->assertSee($this->mahasiswa->nrp);
-        $response->assertSee('Rincian Akademik');
+        $response->assertSee('Academic Details');
     }
 
     /**
@@ -157,10 +157,10 @@ class EndpointHtmlCssTest extends TestCase
     {
         $response = $this->actingAs($this->admin)->get("/dashboard/mahasiswa/{$this->mahasiswa->id}/edit");
 
-        $this->assertValidAdminLteHtmlCss($response, 'Edit Data Mahasiswa');
+        $this->assertValidAdminLteHtmlCss($response, 'Edit Student Record');
         $response->assertSee($this->mahasiswa->nama);
-        $response->assertSee('Formulir Pembaruan Data');
-        $response->assertSee('Perbarui Perubahan');
+        $response->assertSee('Student Update Form');
+        $response->assertSee('Update Changes');
     }
 
     /**
@@ -192,9 +192,9 @@ class EndpointHtmlCssTest extends TestCase
     {
         $response = $this->actingAs($this->admin)->get('/dashboard/matakuliah');
 
-        $this->assertValidAdminLteHtmlCss($response, 'Kurikulum Mata Kuliah');
-        $response->assertSee('Daftar Mata Kuliah');
-        $response->assertSee('Filter Mata Kuliah');
+        $this->assertValidAdminLteHtmlCss($response, 'Course Curriculum');
+        $response->assertSee('Curriculum Courses List');
+        $response->assertSee('Filter Courses');
         $response->assertSee('table-responsive');
     }
 
@@ -225,9 +225,9 @@ class EndpointHtmlCssTest extends TestCase
     {
         $response = $this->actingAs($this->admin)->get('/dashboard/ide-agent');
 
-        $this->assertValidAdminLteHtmlCss($response, 'Proposal Ide Agentic AI');
-        $response->assertSee('Usulan Inovasi Agentic AI');
-        $response->assertSee('Filter Ide Agentic AI');
+        $this->assertValidAdminLteHtmlCss($response, 'Agentic AI Idea Proposals');
+        $response->assertSee('Agentic AI Innovation Proposals');
+        $response->assertSee('Filter Agentic AI Ideas');
         $response->assertSee('table-responsive');
     }
 
@@ -238,10 +238,10 @@ class EndpointHtmlCssTest extends TestCase
     {
         $response = $this->actingAs($this->admin)->get('/dashboard/users');
 
-        $this->assertValidAdminLteHtmlCss($response, 'Manajemen Pengguna');
-        $response->assertSee('Aturan Hak Akses Berbasis Peran');
-        $response->assertSee('Daftar Akun Pengguna');
-        $response->assertSee('Tambah Pengguna Baru');
-        $response->assertSee('table-responsive');
+        $this->assertValidAdminLteHtmlCss($response, 'User Management');
+        $response->assertSee('Role-Based Access Control', false);
+        $response->assertSee('User Accounts', false);
+        $response->assertSee('Add New User', false);
+        $response->assertSee('table-responsive', false);
     }
 }

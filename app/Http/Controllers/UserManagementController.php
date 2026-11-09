@@ -45,7 +45,7 @@ class UserManagementController extends Controller
         $user->assignRole($request->role);
 
         return redirect()->route('dashboard.users.index')
-            ->with('success', "Pengguna {$user->name} berhasil dibuat dengan peran {$request->role}.");
+            ->with('success', "User {$user->name} created successfully with {$request->role} role.");
     }
 
     public function updateRole(Request $request, User $user): RedirectResponse
@@ -57,26 +57,26 @@ class UserManagementController extends Controller
         // Prevent admin from removing their own admin role
         if ($user->id === auth()->id() && $request->role !== 'Admin') {
             return redirect()->route('dashboard.users.index')
-                ->with('error', 'Anda tidak dapat menurunkan peran akun Anda sendiri.');
+                ->with('error', 'You cannot demote your own account role.');
         }
 
         $user->syncRoles([$request->role]);
 
         return redirect()->route('dashboard.users.index')
-            ->with('success', "Peran pengguna {$user->name} berhasil diperbarui menjadi {$request->role}.");
+            ->with('success', "Role for {$user->name} updated successfully to {$request->role}.");
     }
 
     public function destroy(User $user): RedirectResponse
     {
         if ($user->id === auth()->id()) {
             return redirect()->route('dashboard.users.index')
-                ->with('error', 'Anda tidak dapat menghapus akun Anda sendiri.');
+                ->with('error', 'You cannot delete your own account.');
         }
 
         $name = $user->name;
         $user->delete();
 
         return redirect()->route('dashboard.users.index')
-            ->with('success', "Akun {$name} berhasil dihapus.");
+            ->with('success', "Account {$name} deleted successfully.");
     }
 }

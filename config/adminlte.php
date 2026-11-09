@@ -783,50 +783,50 @@ return [
         ],
 
         // Sidebar items:
-        ['header' => 'MENU UTAMA'],
+        ['header' => 'MAIN MENU'],
         [
             'text' => 'Dashboard Overview',
             'url' => 'dashboard',
             'icon' => 'bi bi-speedometer2',
         ],
 
-        ['header' => 'DATA AKADEMIK'],
+        ['header' => 'ACADEMIC DATA'],
         [
-            'text' => 'Data Mahasiswa',
+            'text' => 'Student Records',
             'url' => 'dashboard/mahasiswa',
             'icon' => 'bi bi-people-fill',
             'can' => 'view-mahasiswa',
         ],
         [
-            'text' => 'Data Mata Kuliah',
+            'text' => 'Course Curriculum',
             'url' => 'dashboard/matakuliah',
             'icon' => 'bi bi-journal-bookmark-fill',
             'can' => 'view-matakuliah',
         ],
         [
-            'text' => 'Ide Agentic AI',
+            'text' => 'Agentic AI Ideas',
             'url' => 'dashboard/ide-agent',
             'icon' => 'bi bi-cpu-fill',
             'can' => 'view-ide-agent',
         ],
 
-        ['header' => 'HAK AKSES SISTEM', 'can' => 'manage-users'],
+        ['header' => 'SYSTEM PERMISSIONS', 'can' => 'manage-users'],
         [
-            'text' => 'Manajemen Pengguna & RBAC',
+            'text' => 'User & RBAC Management',
             'url' => 'dashboard/users',
             'icon' => 'bi bi-shield-lock-fill',
             'can' => 'manage-users',
         ],
 
-        ['header' => 'PORTAL MAHASISWA'],
+        ['header' => 'STUDENT PORTAL'],
         [
-            'text' => 'Lihat Portal Utama',
+            'text' => 'Public Academic Portal',
             'url' => '/',
             'icon' => 'bi bi-box-arrow-up-right',
             'target' => '_blank',
         ],
         [
-            'text' => 'Profil Pengguna',
+            'text' => 'User Profile',
             'url' => 'profile',
             'icon' => 'bi bi-person-circle',
         ],

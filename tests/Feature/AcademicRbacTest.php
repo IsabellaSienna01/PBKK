@@ -91,10 +91,10 @@ class AcademicRbacTest extends TestCase
         $response = $this->actingAs($this->adminUser)->get('/dashboard');
 
         $response->assertOk();
-        $response->assertSee('Total Mahasiswa');
-        $response->assertSee('Mata Kuliah Kurikulum');
-        $response->assertSee('Proposal Ide Agentic');
-        $response->assertSee('Pengguna Terdaftar');
+        $response->assertSee('Total Students');
+        $response->assertSee('Curriculum Courses');
+        $response->assertSee('Agentic AI Proposals');
+        $response->assertSee('Registered Users');
     }
 
     public function test_staf_can_view_and_create_mahasiswa_but_cannot_delete(): void
@@ -143,7 +143,7 @@ class AcademicRbacTest extends TestCase
         $this->actingAs($this->adminUser)
             ->get('/dashboard/users')
             ->assertOk()
-            ->assertSee('Manajemen Pengguna');
+            ->assertSee('User Management');
     }
 
     public function test_search_and_when_query_filters_results_cleanly(): void

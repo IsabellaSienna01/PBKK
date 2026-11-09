@@ -48,22 +48,22 @@ class IdeAgentDashboardController extends Controller
         $ide->update($validated);
 
         return redirect()->route('dashboard.ide-agent.index')
-            ->with('success', 'Status ide berhasil diubah menjadi: '.$validated['status']);
+            ->with('success', 'Idea proposal status updated to: '.$validated['status']);
     }
 
     public function destroy(IdeAgent $ide): RedirectResponse
     {
-        // Hak Eksklusif Admin
+        // Hak Eksklusif Admin - Server-side check
         abort_if(
             ! auth()->user()->can('delete-ide-agent'),
             403,
-            'Akses Ditolak: Hanya Admin yang berhak menghapus proposal ide.'
+            'Access Denied: Only Admin can delete idea proposals.'
         );
 
         $judul = $ide->judul_ide;
         $ide->delete();
 
         return redirect()->route('dashboard.ide-agent.index')
-            ->with('success', "Ide Agent ({$judul}) berhasil dihapus oleh Admin.");
+            ->with('success', "Agent Idea ({$judul}) successfully deleted by Admin.");
     }
 }

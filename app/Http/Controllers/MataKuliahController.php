@@ -60,7 +60,7 @@ class MataKuliahController extends Controller
         MataKuliah::create($validated);
 
         return redirect()->route('dashboard.matakuliah.index')
-            ->with('success', 'Mata Kuliah baru berhasil ditambahkan.');
+            ->with('success', 'New course curriculum created successfully.');
     }
 
     public function edit(MataKuliah $matakuliah): View
@@ -81,22 +81,22 @@ class MataKuliahController extends Controller
         $matakuliah->update($validated);
 
         return redirect()->route('dashboard.matakuliah.index')
-            ->with('success', 'Mata Kuliah berhasil diperbarui.');
+            ->with('success', 'Course curriculum updated successfully.');
     }
 
     public function destroy(MataKuliah $matakuliah): RedirectResponse
     {
-        // Hak Eksklusif Admin - Otorisasi Manual Server-side
+        // Hak Eksklusif Admin - Server-side authorization check
         abort_if(
             ! auth()->user()->can('delete-matakuliah'),
             403,
-            'Akses Ditolak: Hanya Admin yang berhak menghapus kurikulum Mata Kuliah.'
+            'Access Denied: Only Admin can delete course curriculum.'
         );
 
         $nama = $matakuliah->nama_mk;
         $matakuliah->delete();
 
         return redirect()->route('dashboard.matakuliah.index')
-            ->with('success', "Mata Kuliah ({$nama}) berhasil dihapus oleh Admin.");
+            ->with('success', "Course ({$nama}) successfully deleted by Admin.");
     }
 }

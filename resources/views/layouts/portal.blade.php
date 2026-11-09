@@ -41,7 +41,7 @@
                     <a href="{{ route('agent.idea') }}" class="whitespace-nowrap rounded-md px-2 py-1.5 transition hover:bg-slate-100 hover:text-blue-700 dark:hover:bg-slate-800 dark:hover:text-blue-300">Agentic AI</a>
                     <a href="{{ route('dashboard') }}" class="inline-flex items-center gap-1.5 whitespace-nowrap rounded-lg bg-indigo-600 px-3.5 py-1.5 text-xs font-semibold text-white shadow-sm transition hover:bg-indigo-700">
                         <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                        Tugas Mandiri (RBAC)
+                        Dashboard 
                     </a>
                 </div>
 

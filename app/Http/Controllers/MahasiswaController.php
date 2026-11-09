@@ -81,7 +81,7 @@ class MahasiswaController extends Controller
         Mahasiswa::create($validated);
 
         return redirect()->route('dashboard.mahasiswa.index')
-            ->with('success', 'Data Mahasiswa baru berhasil ditambahkan.');
+            ->with('success', 'New student record created successfully.');
     }
 
     public function show(Mahasiswa $mahasiswa): View
@@ -117,22 +117,22 @@ class MahasiswaController extends Controller
         $mahasiswa->update($validated);
 
         return redirect()->route('dashboard.mahasiswa.index')
-            ->with('success', 'Data Mahasiswa berhasil diperbarui.');
+            ->with('success', 'Student record updated successfully.');
     }
 
     public function destroy(Mahasiswa $mahasiswa): RedirectResponse
     {
-        // Hak Eksklusif Admin - Otorisasi Manual Server-side pencegah kebocoran URL
+        // Hak Eksklusif Admin - Server-side authorization check
         abort_if(
             ! auth()->user()->can('delete-mahasiswa'),
             403,
-            'Akses Ditolak: Hanya Admin dengan hak eksklusif yang berhak menghapus data Mahasiswa.'
+            'Access Denied: Only Admin with exclusive permissions can delete student records.'
         );
 
         $nama = $mahasiswa->nama;
         $mahasiswa->delete();
 
         return redirect()->route('dashboard.mahasiswa.index')
-            ->with('success', "Data Mahasiswa ({$nama}) berhasil dihapus permanen oleh Admin.");
+            ->with('success', "Student record ({$nama}) permanently deleted by Admin.");
     }
 }

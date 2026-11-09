@@ -1,15 +1,15 @@
 @extends('adminlte::page')
 
-@section('title', 'Manajemen Pengguna & RBAC')
+@section('title', 'User & RBAC Management')
 
 @section('content_header')
     <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
         <div>
-            <h1 class="m-0 font-weight-bold">Manajemen Pengguna & Otorisasi RBAC</h1>
-            <p class="text-muted m-0 small">Pengaturan peran dinamis Spatie (Admin & Staf)</p>
+            <h1 class="m-0 font-weight-bold">User Management & RBAC Authorization</h1>
+            <p class="text-muted m-0 small">Dynamic role management powered by Spatie (Admin & Staff)</p>
         </div>
         <button type="button" class="btn btn-primary shadow-sm" data-bs-toggle="modal" data-bs-target="#addUserModal">
-            <i class="bi bi-person-plus-fill me-1"></i> Tambah Pengguna Baru
+            <i class="bi bi-person-plus-fill me-1"></i> Add New User
         </button>
     </div>
 @stop
@@ -31,21 +31,21 @@
 
     {{-- Callout Penjelasan RBAC --}}
     <div class="callout callout-warning shadow-sm mb-4">
-        <h5 class="fw-bold mb-1"><i class="bi bi-shield-lock-fill text-warning"></i> Aturan Hak Akses Berbasis Peran (RBAC)</h5>
+        <h5 class="fw-bold mb-1"><i class="bi bi-shield-lock-fill text-warning"></i> Role-Based Access Control (RBAC) Rules</h5>
         <div class="row mt-2">
             <div class="col-md-6">
                 <div class="p-2 border rounded">
                     <span class="badge bg-danger">Role: Admin</span>
                     <p class="small text-muted mb-0 mt-1">
-                        Memiliki akses menyeluruh ke seluruh modul, termasuk <strong>Hak Eksklusif Hapus Data</strong> dan pengelolaan pengguna & peran.
+                        Has complete access to all modules, including <strong>Exclusive Permanent Deletion Rights</strong> and managing users & roles.
                     </p>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="p-2 border rounded">
-                    <span class="badge bg-info text-white">Role: Staf</span>
+                    <span class="badge bg-info text-white">Role: Staff</span>
                     <p class="small text-muted mb-0 mt-1">
-                        Memiliki akses terbatas untuk melihat, menambah, dan mengubah data. <strong>Tidak memiliki izin menghapus data</strong> (tombol hapus dikunci dan controller menolak akses).
+                        Has restricted access to view, create, and edit records. <strong>No deletion permission</strong> (delete buttons are visually locked and controllers strictly reject access).
                     </p>
                 </div>
             </div>
@@ -56,7 +56,7 @@
     <div class="card card-outline card-primary shadow-sm">
         <div class="card-header">
             <h3 class="card-title fw-bold mb-0">
-                <i class="bi bi-people-fill me-1"></i> Daftar Akun Pengguna & Peran
+                <i class="bi bi-people-fill me-1"></i> User Accounts & Assigned Roles
             </h3>
         </div>
 
@@ -65,11 +65,11 @@
                 <thead>
                     <tr>
                         <th style="width: 50px;">#</th>
-                        <th>Nama Pengguna</th>
-                        <th>Email Login</th>
-                        <th>Peran (Spatie Role)</th>
-                        <th>Cakupan Hak Akses (Permissions)</th>
-                        <th style="width: 220px;" class="text-center">Ubah Peran / Aksi</th>
+                        <th>User Name</th>
+                        <th>Login Email</th>
+                        <th>Role (Spatie Role)</th>
+                        <th>Permission Scope</th>
+                        <th style="width: 220px;" class="text-center">Change Role / Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -82,7 +82,7 @@
                                     <div>
                                         <div class="fw-bold">{{ $u->name }}</div>
                                         @if($u->id === auth()->id())
-                                            <span class="badge bg-secondary small">Akun Anda Saat Ini</span>
+                                            <span class="badge bg-secondary small">Your Current Account</span>
                                         @endif
                                     </div>
                                 </div>
@@ -98,9 +98,9 @@
                             <td>
                                 <div class="small text-muted" style="max-width: 320px;">
                                     @if($u->hasRole('Admin'))
-                                        <span class="text-success fw-bold"><i class="bi bi-check-all"></i> Akses Penuh (All Permissions)</span>
+                                        <span class="text-success fw-bold"><i class="bi bi-check-all"></i> Full Access (All Permissions)</span>
                                     @else
-                                        <span class="text-secondary"><i class="bi bi-check2"></i> View, Create, Edit (Tanpa Hapus Data)</span>
+                                        <span class="text-secondary"><i class="bi bi-check2"></i> View, Create, Edit (No Delete Permissions)</span>
                                     @endif
                                 </div>
                             </td>
@@ -112,14 +112,14 @@
                                         @method('PATCH')
                                         @if($u->hasRole('Admin'))
                                             <input type="hidden" name="role" value="Staf">
-                                            <button type="submit" class="btn btn-xs btn-outline-info" title="Ubah menjadi Staf"
+                                            <button type="submit" class="btn btn-xs btn-outline-info" title="Demote to Staff"
                                                 {{ $u->id === auth()->id() ? 'disabled' : '' }}>
-                                                Jadikan Staf
+                                                Set as Staff
                                             </button>
                                         @else
                                             <input type="hidden" name="role" value="Admin">
-                                            <button type="submit" class="btn btn-xs btn-outline-danger" title="Promosikan ke Admin">
-                                                Jadikan Admin
+                                            <button type="submit" class="btn btn-xs btn-outline-danger" title="Promote to Admin">
+                                                Set as Admin
                                             </button>
                                         @endif
                                     </form>
@@ -127,10 +127,10 @@
                                     {{-- Hapus Pengguna --}}
                                     @if($u->id !== auth()->id())
                                         <form method="POST" action="{{ route('dashboard.users.destroy', $u) }}" class="d-inline"
-                                            onsubmit="return confirm('Hapus akun {{ $u->name }}?')">
+                                            onsubmit="return confirm('Delete user account {{ $u->name }}?')">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-xs btn-outline-danger" title="Hapus Akun">
+                                            <button type="submit" class="btn btn-xs btn-outline-danger" title="Delete User Account">
                                                 <i class="bi bi-trash-fill"></i>
                                             </button>
                                         </form>
@@ -154,7 +154,7 @@
             <div class="modal-content">
                 <div class="modal-header bg-primary text-white">
                     <h5 class="modal-title" id="addUserModalLabel">
-                        <i class="bi bi-person-plus-fill me-1"></i> Tambah Pengguna & Tetapkan Peran
+                        <i class="bi bi-person-plus-fill me-1"></i> Add New User & Assign Role
                     </h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -162,29 +162,29 @@
                     @csrf
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label for="name" class="form-label fw-semibold">Nama Lengkap</label>
-                            <input type="text" class="form-control" id="name" name="name" required placeholder="Contoh: Staff Akademik Baru">
+                            <label for="name" class="form-label fw-semibold">Full Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required placeholder="e.g. New Academic Staff">
                         </div>
                         <div class="mb-3">
-                            <label for="email" class="form-label fw-semibold">Email Login</label>
-                            <input type="email" class="form-control" id="email" name="email" required placeholder="staff.baru@academic.its.ac.id">
+                            <label for="email" class="form-label fw-semibold">Login Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required placeholder="new.staff@academic.its.ac.id">
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label fw-semibold">Password</label>
-                            <input type="password" class="form-control" id="password" name="password" required placeholder="Minimal 8 karakter">
+                            <input type="password" class="form-control" id="password" name="password" required placeholder="Minimum 8 characters">
                         </div>
                         <div class="mb-3">
-                            <label for="role" class="form-label fw-semibold">Peran (Spatie Role)</label>
+                            <label for="role" class="form-label fw-semibold">Role (Spatie Role)</label>
                             <select class="form-select" id="role" name="role" required>
-                                <option value="Staf">Staf (Akses Terbatas - Tanpa Izin Hapus)</option>
-                                <option value="Admin">Admin (Akses Penuh - Termasuk Hapus Data)</option>
+                                <option value="Staf">Staff (Restricted Access - No Delete Permissions)</option>
+                                <option value="Admin">Admin (Full Access - Including Delete Permissions)</option>
                             </select>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                         <button type="submit" class="btn btn-primary">
-                            <i class="bi bi-save me-1"></i> Simpan Pengguna
+                            <i class="bi bi-save me-1"></i> Save User
                         </button>
                     </div>
                 </form>

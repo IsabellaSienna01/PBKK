@@ -37,6 +37,7 @@ Ditambah metrik distribusi mahasiswa (Aktif, Cuti, Lulus) dan rata-rata IPK: `Ma
 - 🔗 **Pengunci Link Pagination `withQueryString()`**: Mempertahankan parameter filter (kata kunci `search`, filter `jurusan`, dan filter `status`) saat berpindah halaman data di pagination.
 - ⚡ **Auto-Login Test Accounts**: Tersedia tombol login instan 1-klik di halaman login (`/login`) untuk akun Admin dan Staf guna mempermudah proses evaluasi demo dosen/asdos tanpa perlu mengetik kredensial manual.
 - 🎲 **Auto-Seeder Faker Realistis**: Seeder otomatis (`AcademicSeeder` & `RolePermissionSeeder`) langsung menyiram puluhan data dummy realistis (40+ mahasiswa, 10 kurikulum mata kuliah, dan usulan ide agentic AI) saat migrasi database awal.
+- 🌐 **Internasionalisasi Antarmuka (English UI)**: Seluruh antarmuka admin dashboard, tabel data, formulir pembuatan & penyuntingan, dialog konfirmasi modal, notifikasi pesan kilat (*flash messages*), serta navigasi menu telah diterjemahkan dan distandardisasi ke Bahasa Inggris profesional.
 - 📐 **Kerapian Kode Standar PSR-12**: Seluruh controller, model, request, dan file konfigurasi diformat rapi dan divalidasi lolos menggunakan **Laravel Pint**.
 
 ---
@@ -158,7 +159,7 @@ Jalankan pengujian unit dan fungsional bawaan Laravel yang memvalidasi seluruh s
 ```bash
 php artisan test
 ```
-*Hasil: **31 test suite passed (94 assertions)**, termasuk pengujian otorisasi Spatie RBAC, penguncian rute, kueri `when()`, dan auto-login.*
+*Hasil: **43 test suite passed (208 assertions)**, termasuk pengujian struktur HTML5/CSS AdminLTE, otorisasi Spatie RBAC, penguncian rute, kueri `when()`, dan auto-login.*
 
 Validasi kerapian kode standar PSR-12:
 ```bash
