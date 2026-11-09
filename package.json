@@ -8,6 +8,7 @@
     },
     "devDependencies": {
         "@tailwindcss/vite": "^4.0.0",
+        "alpinejs": "^3.4.2",
         "concurrently": "^10.0.3",
         "laravel-vite-plugin": "^3.1",
         "tailwindcss": "^4.0.0",
@@ -17,6 +18,10 @@
         "@laravel/multiplex": "^0.4.1"
     },
     "dependencies": {
-        "lucide": "^1.47.0"
+        "@fontsource/source-sans-3": "^5.3.1",
+        "bootstrap": "^5.3.8",
+        "bootstrap-icons": "^1.13.2",
+        "lucide": "^1.47.0",
+        "overlayscrollbars": "^2.17.0"
     }
 }

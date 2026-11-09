@@ -1,4 +1,8 @@
+import Alpine from 'alpinejs';
 import { createIcons, Moon, Sun } from 'lucide';
+
+window.Alpine = Alpine;
+Alpine.start();
 
 document.addEventListener('DOMContentLoaded', () => {
     createIcons({ icons: { Moon, Sun } });

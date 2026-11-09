@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\IdeAgent;
+use App\Models\Mahasiswa;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\View\View;
 
 class PageController extends Controller
@@ -22,7 +23,22 @@ class PageController extends Controller
 
     public function profile(): View
     {
-        return view('mahasiswa', ['nrp' => self::OWNER_NRP]);
+        $mahasiswa = Mahasiswa::where('nrp', self::OWNER_NRP)->first();
+
+        return view('mahasiswa', [
+            'nrp' => self::OWNER_NRP,
+            'mahasiswa' => $mahasiswa,
+        ]);
+    }
+
+    public function legacyProfile(string $nrp): View
+    {
+        $mahasiswa = Mahasiswa::where('nrp', $nrp)->first();
+
+        return view('mahasiswa', [
+            'nrp' => $nrp,
+            'mahasiswa' => $mahasiswa,
+        ]);
     }
 
     public function agentIdea(): View
@@ -38,7 +54,14 @@ class PageController extends Controller
             'deskripsi' => ['required', 'string', 'max:2000'],
         ]);
 
+        IdeAgent::create([
+            'nama' => $validated['nama'],
+            'judul_ide' => $validated['judul_ide'],
+            'deskripsi' => $validated['deskripsi'],
+            'status' => 'Menunggu Review',
+        ]);
+
         return redirect()->route('agent.idea')
-            ->with('idea_success', 'Thank you, '.$validated['nama'].'! We appreciate your idea.');
+            ->with('idea_success', 'Thank you, '.$validated['nama'].'! Your idea has been successfully submitted and stored.');
     }
 }

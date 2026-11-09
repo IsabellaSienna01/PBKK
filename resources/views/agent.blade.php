@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.portal')
 
 @section('title', 'Agentic AI Idea')
 @section('content')
@@ -34,7 +34,7 @@
                     Problem
                 </p>
 
-                <h2 class="mt-3 text-2xl font-semibold tracking-tight">
+                <h2 class="mt-3 text-2xl font-semibold tracking-tight text-slate-950 dark:text-white">
                     AI prompts can use more tokens than necessary.
                 </h2>
 
@@ -50,7 +50,7 @@
                     Proposed Solution
                 </p>
 
-                <h2 class="mt-3 text-2xl font-semibold tracking-tight">
+                <h2 class="mt-3 text-2xl font-semibold tracking-tight text-slate-950 dark:text-white">
                     Analyze the prompt before sending it to an AI model.
                 </h2>
 
@@ -68,7 +68,7 @@
                     How It Works
                 </p>
 
-                <h2 class="mt-3 text-2xl font-semibold tracking-tight">
+                <h2 class="mt-3 text-2xl font-semibold tracking-tight text-slate-950 dark:text-white">
                     From a user's prompt to a more efficient AI request.
                 </h2>
 
@@ -76,7 +76,7 @@
                     <article class="border border-slate-200 p-5 dark:border-slate-700">
                         <span class="text-sm font-semibold text-blue-600 dark:text-blue-400">01</span>
 
-                        <h3 class="mt-6 font-semibold">Input Prompt</h3>
+                        <h3 class="mt-6 font-semibold text-slate-900 dark:text-white">Input Prompt</h3>
 
                         <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">
                             The user enters the prompt they want to use.
@@ -86,7 +86,7 @@
                     <article class="border border-slate-200 p-5 dark:border-slate-700">
                         <span class="text-sm font-semibold text-blue-600 dark:text-blue-400">02</span>
 
-                        <h3 class="mt-6 font-semibold">Token Analysis</h3>
+                        <h3 class="mt-6 font-semibold text-slate-900 dark:text-white">Token Analysis</h3>
 
                         <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">
                             The system estimates token usage and analyzes the structure of the prompt.
@@ -96,7 +96,7 @@
                     <article class="border border-slate-200 p-5 dark:border-slate-700">
                         <span class="text-sm font-semibold text-blue-600 dark:text-blue-400">03</span>
 
-                        <h3 class="mt-6 font-semibold">Prompt Optimization</h3>
+                        <h3 class="mt-6 font-semibold text-slate-900 dark:text-white">Prompt Optimization</h3>
 
                         <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">
                             The agent suggests a shorter and more efficient prompt while keeping the original intent.
@@ -106,7 +106,7 @@
                     <article class="border border-slate-200 p-5 dark:border-slate-700">
                         <span class="text-sm font-semibold text-blue-600 dark:text-blue-400">04</span>
 
-                        <h3 class="mt-6 font-semibold">Model Recommendation</h3>
+                        <h3 class="mt-6 font-semibold text-slate-900 dark:text-white">Model Recommendation</h3>
 
                         <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">
                             The system recommends a suitable AI model based on the task and expected efficiency.
@@ -188,7 +188,7 @@
                 Idea Submission Form
             </p>
 
-            <h2 class="mt-3 text-2xl font-semibold tracking-tight">
+            <h2 class="mt-3 text-2xl font-semibold tracking-tight text-slate-950 dark:text-white">
                 Share Your Agentic AI Idea.
             </h2>
 
@@ -214,7 +214,7 @@
 
             <div class="grid gap-5 sm:grid-cols-2">
                 <div>
-                    <label for="nama" class="block text-sm font-semibold">
+                    <label for="nama" class="block text-sm font-semibold text-slate-900 dark:text-slate-200">
                         Name
                     </label>
 
@@ -230,7 +230,7 @@
                 </div>
 
                 <div>
-                    <label for="judul_ide" class="block text-sm font-semibold">
+                    <label for="judul_ide" class="block text-sm font-semibold text-slate-900 dark:text-slate-200">
                         Idea Title
                     </label>
 
@@ -247,7 +247,7 @@
             </div>
 
             <div>
-                <label for="deskripsi" class="block text-sm font-semibold">
+                <label for="deskripsi" class="block text-sm font-semibold text-slate-900 dark:text-slate-200">
                     Idea Description
                 </label>
 
